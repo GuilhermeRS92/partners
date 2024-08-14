@@ -37,26 +37,26 @@ export class PartnersComponent {
         }
       });
   }
-  viewPartner(customerId: string){
-    this.router.navigate(['/parceiros/detalhes', customerId]);
+  viewPartner(partnerId: string){
+    this.router.navigate(['/parceiros/detalhes', partnerId]);
 
   }
 
-  editPartner(customerId: string){
-    this.router.navigate(['/parceiros/editar', customerId]);
+  editPartner(partnerId: string){
+    this.router.navigate(['/parceiros/editar', partnerId]);
   }
 
   addPartner(){
     this.router.navigate(['/parceiros/cadastrar']);
   }
 
-  deletePartner(customerId: string, curstomerName: string){
+  deletePartner(partnerId: string, curstomerName: string){
     this.confirmationService.confirm({
       message: `Tem certeza que deseja excluir ${curstomerName}?`,
       accept: () => {
-        this.partnersService.deletePartner(customerId)
+        this.partnersService.deletePartner(partnerId)
         .subscribe(() => {
-          this.partners = this.partners.filter(partner => partner.id !== customerId);
+          this.partners = this.partners.filter(partner => partner.id !== partnerId);
           this.messageService.add({
             severity: 'success',
             summary: 'Sucesso',
