@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { PartnersComponent } from './pages/partners/partners.component';
 import { FormPartnerComponent } from './pages/form-partner/form-partner.component';
 import { HeaderComponent } from './components/header/header.component';
-import { DetailPartnerComponent } from './pages/detail-partner/detail-partner.component';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PartnersComponent } from './pages/partners/partners.component';
 import { FormPartnerComponent } from './pages/form-partner/form-partner.component';
-import { DetailPartnerComponent } from './pages/detail-partner/detail-partner.component';
 
 const PARTNERS_ROUTES: Routes = [
   {
