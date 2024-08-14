@@ -4,7 +4,7 @@
     <p-button label="Cadastrar Parceiro" icon="pi pi-plus" (click)="addPartner()" class="button"></p-button>
 </div>
 
-<p-toast key="shareAlert"></p-toast>
+<p-toast></p-toast>
 <p-confirmDialog></p-confirmDialog>
 <div class="card">
     <p-table [value]="partners" [paginator]="true" [rows]="10" [(first)]="first" [(rows)]="rows" [showCurrentPageReport]="true" [tableStyle]="{'min-width': '50rem'}"

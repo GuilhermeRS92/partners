@@ -77,7 +77,6 @@ export class PartnersComponent {
       .then(() => {
         this.messageService.add({
           severity: 'info',
-          key: 'shareAlert',
           summary: 'Compartilhado',
           detail: `Link para a página ${ first + 1 } copiada com sucesso!`
         });
@@ -86,7 +85,6 @@ export class PartnersComponent {
         console.error('Erro ao copiar o link:', err);
         this.messageService.add({
           severity: 'error',
-          key: 'shareAlert',
           summary: 'Erro',
           detail: `Erro ao copiar o link para a página ${ first / rows}.`
         });
