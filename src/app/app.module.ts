@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PartnersService } from './services/partners.service';
 import { registerLocaleData } from '@angular/common';
 import localeBr from '@angular/common/locales/pt';
-import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(localeBr, 'pt');
@@ -31,7 +31,7 @@ registerLocaleData(localeBr, 'pt');
     TableModule,
     ButtonModule,
     ToastModule,
-    ConfirmPopupModule,
+    ConfirmDialogModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule

@@ -50,9 +50,10 @@ export class PartnersComponent {
     this.router.navigate(['/parceiros/cadastrar']);
   }
 
-  deletePartner(partnerId: string, curstomerName: string){
+  deletePartner(partnerId: string, partnerName: string){
     this.confirmationService.confirm({
-      message: `Tem certeza que deseja excluir ${curstomerName}?`,
+      message: `Tem certeza que deseja excluir ${partnerName}?`,
+      acceptLabel: 'Sim',
       accept: () => {
         this.partnersService.deletePartner(partnerId)
         .subscribe(() => {
@@ -63,7 +64,8 @@ export class PartnersComponent {
             detail: 'Parceiro excluído com sucesso!'
           });
         });
-      }
+      },
+      rejectLabel: 'Não'
     })
   }
 

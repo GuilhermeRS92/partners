@@ -5,7 +5,7 @@
 </div>
 
 <p-toast key="shareAlert"></p-toast>
-<p-confirmPopup key="confirmDelete"></p-confirmPopup>
+<p-confirmDialog></p-confirmDialog>
 <div class="card">
     <p-table [value]="partners" [paginator]="true" [rows]="10" [(first)]="first" [(rows)]="rows" [showCurrentPageReport]="true" [tableStyle]="{'min-width': '50rem'}"
         currentPageReportTemplate="Mostrando de {first} até {last} de {totalRecords} parceiro" [rowsPerPageOptions]="[10,25,50]">
@@ -19,18 +19,18 @@
                 <th style="width:10%">Opções</th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-customer>
+        <ng-template pTemplate="body" let-partner>
             <tr>
-                <td title="{{customer.name}}">{{customer.name}}</td>
-                <td title="{{customer.description}}">{{customer.description}}</td>
-                <td title="{{customer.repositoryGit}}">{{customer.repositoryGit}}</td>
-                <td title="{{customer.urlDoc}}">{{customer.urlDoc}}</td>
-                <td title="{{customer.createdAt | date: 'dd/MM/yyyy HH:mm'}}">{{customer.createdAt | date: 'dd/MM/yyyy HH:mm' }}</td>
+                <td title="{{partner.name}}">{{partner.name}}</td>
+                <td title="{{partner.description}}">{{partner.description}}</td>
+                <td title="{{partner.repositoryGit}}">{{partner.repositoryGit}}</td>
+                <td title="{{partner.urlDoc}}">{{partner.urlDoc}}</td>
+                <td title="{{partner.createdAt | date: 'dd/MM/yyyy HH:mm'}}">{{partner.createdAt | date: 'dd/MM/yyyy HH:mm' }}</td>
                 <td>
                     <span class="options">
-                        <a class="option" (click)="editPartner(customer.id)">Editar</a>
-                        <a class="option" (click)="viewPartner(customer.id)">Visualizar</a>
-                        <a class="option" (click)="deletePartner(customer.id, customer.name)">Excluir</a>
+                        <a class="option" (click)="editPartner(partner.id)">Editar</a>
+                        <a class="option" (click)="viewPartner(partner.id)">Visualizar</a>
+                        <a class="option" (click)="deletePartner(partner.id, partner.name)">Excluir</a>
                     </span>
                 </td>
             </tr>
