@@ -1,18 +1,43 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PartnersComponent } from './pages/partners/partners.component';
+import { FormPartnerComponent } from './pages/form-partner/form-partner.component';
+import { HeaderComponent } from './components/header/header.component';
+import { DetailPartnerComponent } from './pages/detail-partner/detail-partner.component';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
+import { HttpClientModule } from '@angular/common/http';
+import { PartnersService } from './services/partners.service';
+import { registerLocaleData } from '@angular/common';
+import localeBr from '@angular/common/locales/pt';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+registerLocaleData(localeBr, 'pt');
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PartnersComponent,
+    FormPartnerComponent,
+    HeaderComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    CommonModule,
+    AppRoutingModule,
+    TableModule,
+    ButtonModule,
+    ToastModule,
+    ConfirmPopupModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PartnersService, {provide: LOCALE_ID, useValue: 'pt'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

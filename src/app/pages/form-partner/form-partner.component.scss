@@ -1,0 +1,75 @@
+
+.container{
+    width: 100vw;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .card {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 40px 32px;
+        border-radius: 12px;
+        background-color: var(--off-white);
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            .form-group{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                .array-group{
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    gap: 24px;
+                    .array{
+                        display: flex;
+                        gap: 8px;
+                        position: relative;
+                        .btn-delete{
+                            position: absolute;
+                            right: 4px;
+                            margin-top: auto;
+                            margin-bottom: auto;
+                            height: 20px;
+                            bottom: 0;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+            .add-button{
+                align-self: center;
+                button{
+                    background-color: var(--gray);
+                }
+                button:hover{
+                    background-color: var(--secondary) !important;
+                    color: var(--off-white) !important;
+                }
+            }
+            .form-checkbox{
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                input{
+                    cursor: pointer;
+                }
+                label{
+                    font-size: 16px;
+                    color: var(--secondary);
+                }
+            }
+            .errors{
+                text-align: center;
+                color: var(--danger);
+                font-size: 16px;
+            }
+        }
+    }
+}

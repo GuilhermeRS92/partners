@@ -1,0 +1,42 @@
+<app-header [title]="'Parceiros'" [caption]="'Nessa página você poderá consultar e cadastrar parceiros.'"></app-header>
+
+<div class="form-button">
+    <p-button label="Cadastrar Parceiro" icon="pi pi-plus" (click)="addPartner()" class="button"></p-button>
+</div>
+
+<p-toast key="shareAlert"></p-toast>
+<p-confirmPopup key="confirmDelete"></p-confirmPopup>
+<div class="card">
+    <p-table [value]="partners" [paginator]="true" [rows]="10" [(first)]="first" [(rows)]="rows" [showCurrentPageReport]="true" [tableStyle]="{'min-width': '50rem'}"
+        currentPageReportTemplate="Mostrando de {first} até {last} de {totalRecords} parceiro" [rowsPerPageOptions]="[10,25,50]">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width:20%">Name</th>
+                <th style="width:20%">Descrição</th>
+                <th style="width:20%">Repositório Git</th>
+                <th style="width:20%">Documentações</th>
+                <th style="width:10%">Cadastrado em</th>
+                <th style="width:10%">Opções</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-customer>
+            <tr>
+                <td title="{{customer.name}}">{{customer.name}}</td>
+                <td title="{{customer.description}}">{{customer.description}}</td>
+                <td title="{{customer.repositoryGit}}">{{customer.repositoryGit}}</td>
+                <td title="{{customer.urlDoc}}">{{customer.urlDoc}}</td>
+                <td title="{{customer.createdAt | date: 'dd/MM/yyyy HH:mm'}}">{{customer.createdAt | date: 'dd/MM/yyyy HH:mm' }}</td>
+                <td>
+                    <span class="options">
+                        <a class="option" (click)="editPartner(customer.id)">Editar</a>
+                        <a class="option" (click)="viewPartner(customer.id)">Visualizar</a>
+                        <a class="option" (click)="deletePartner(customer.id, customer.name)">Excluir</a>
+                    </span>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+            <p-button type="button" icon="pi pi-share-alt" label="Compartilhar Página" styleClass="p-button-text" (onClick)="sharePage(first, rows)"></p-button>
+        </ng-template>
+    </p-table>
+</div>
