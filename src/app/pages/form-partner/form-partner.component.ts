@@ -103,7 +103,7 @@ export class FormPartnerComponent implements OnInit, OnDestroy {
   save(){
     if(this.partnerForm.valid){
       const partner: Partner = this.partnerForm.value;
-      console.log(partner);
+
       if(partner.id){
         const putPartnerSubscription = this.partnerService.putPartner(partner)
           .subscribe({
