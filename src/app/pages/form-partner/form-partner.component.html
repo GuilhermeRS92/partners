@@ -10,7 +10,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Descrição</label>
-                <input type="description" class="form-control" id="description" name="description" formControlName="description" [ngClass]="{'invalid': partnerForm.get('description')?.errors && partnerForm.get('description')?.touched}">
+                <input type="text" class="form-control" id="description" name="description" formControlName="description" [ngClass]="{'invalid': partnerForm.get('description')?.errors && partnerForm.get('description')?.touched}">
             </div>
             <div class="form-group">
                 <label for="repositoryGit">Repositório Git</label>
